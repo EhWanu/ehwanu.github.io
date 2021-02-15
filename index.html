@@ -16,10 +16,8 @@
   <!---Navbar-->
   <nav class="navbar navbar-custom text-uppercase fixed-top">
     <a class="navbar-brand">Pokedex</a>
-    <form class="form-inline">
-      <input class="pokemon-search" oninput="searchPokemon()" class="form-control mb-2 mb-md-0" type="search"
-        placeholder="Search" aria-label="Search">
-      <button class="btn btn-danger my-2 my-sm-0" type="submit">Search</button>
+    <form class="col-8">
+      <input id='pokemon-search' onkeyup="pokemonSearch()" placeholder="Find Pokemon">
     </form>
   </nav>
 
