@@ -19,16 +19,14 @@ let pokemonRepository = (function () {
 
   function addListItem(pokemon) {
     let pokemonList = document.querySelector(".list-group");
-    let listpokemon = document.createElement("list-group-item");
     let button = document.createElement("button");
     button.innerText = pokemon.name;
     button.classList.add('text-capitalize');
-    button.classList.add("btn-danger", "btn-lg", "btn-block");
+    button.classList.add("btn-light", "btn-lg", "btn-block");
     button.setAttribute('data-toggle', 'modal');
-    button.setAttribute('data-bs-name', pokemon.name);
+    button.setAttribute('data-bs-name', pokemon.name); 0
     button.setAttribute('data-target', '#pokemonModal')
-    listpokemon.appendChild(button);
-    pokemonList.appendChild(listpokemon);
+    pokemonList.appendChild(button);
     button.addEventListener("click", function (event) {
       showDetails(pokemon);
     });
@@ -138,18 +136,18 @@ function hideLoadMessage() {
 
 
 function pokemonSearch() {
-  let input = document.querySelector('pokemon-search')
-  let filter = input.value.toUpperCase();
-  ul = document.getElementById('list-group')
-  li = ul.getElementsbyTaName('li');
+  var input, filter, ul, button, i, txtValue;
+  input = document.querySelector('#pokemon-search')
+  filter = input.value.toUpperCase();
+  ul = document.getElementById('me');
+  button = ul.getElementsByTagName('button');
 
-  for (i = 0; i < li.length; i++) {
-    a = li[i].getElementsByTagName("a")[0];
-    txtValue = a.textContent || a.innerText;
+  for (i = 0; i < button.length; i++) {
+    txtValue = button[i].textContent || button[i].innerText;
     if (txtValue.toUpperCase().indexOf(filter) > -1) {
-      li[i].style.display = "";
+      button[i].style.display = "";
     } else {
-      li[i].style.display = "none";
+      button[i].style.display = "none";
     }
   }
 }
