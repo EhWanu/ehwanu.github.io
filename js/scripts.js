@@ -135,3 +135,27 @@ function hideLoadMessage() {
   let loadMessage = document.querySelector('load-message');
   loadMessage.parentElement.removeChild(loadMessage);
 }
+
+
+function pokemonSearch() {
+  let input = document.querySelector('pokemon-search')
+  let filter = input.value.toUpperCase();
+  ul = document.getElementById('list-group')
+  li = ul.getElementsbyTaName('li');
+
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    txtValue = a.textContent || a.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+
+window.addEventListener('keydown', function (e) {
+  if (e.keyCode == '13') {
+    e.preventDefault();
+  }
+})
