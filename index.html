@@ -14,11 +14,13 @@
 <body>
 
   <!---Navbar-->
-  <nav class="navbar navbar-custom text-uppercase fixed-top">
+  <nav class="navbar navbar-expand- navbar-custom text-uppercase fixed-top" >
+    <div class="container-fluid flex flex-column flex-md-row  ">
     <a class="navbar-brand">Pokedex</a>
-    <form class="col-3.5">
-      <input id='pokemon-search' onkeyup="pokemonSearch()" placeholder="Find Pokemon">
+    <form class="justify-content-center" >
+      <input id='pokemon-search' onkeyup="pokemonSearch()" placeholder="Search" class="form-control mb-1 md-md-0">
     </form>
+  </div>
   </nav>
 
 
@@ -32,7 +34,7 @@
       <div class="modal-content text-center">
         <div class="modal-header">
           <h5 class="modal-title text-capitalize fs-2" id="pokemonModalLabel"></h5>
-          <button type="btn btn-danger" class="close" data-dismiss="modal" aria-label="Close">
+          <button type="btn " class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>

@@ -22,7 +22,7 @@ let pokemonRepository = (function () {
     let button = document.createElement("button");
     button.innerText = pokemon.name;
     button.classList.add('text-capitalize');
-    button.classList.add("btn-light", "btn-lg", "btn-block");
+    button.classList.add("btn-light", "btn-outline-secondary", "btn-lg", "btn-custom" );
     button.setAttribute('data-toggle', 'modal');
     button.setAttribute('data-bs-name', pokemon.name); 0
     button.setAttribute('data-target', '#pokemonModal')
