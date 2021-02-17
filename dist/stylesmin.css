@@ -1,0 +1,14 @@
+#pokemon-search {
+  border-radius: 50px;
+}
+.navbar-custom {
+  background: red;
+  color: #fff;
+}
+.list-group {
+  margin-top: 60px;
+}
+.btn-custom {
+  transition: all 250ms;
+  border-bottom: 1px solid #111;
+}
