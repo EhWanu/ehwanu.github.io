@@ -1,51 +1,64 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Pokedex</title>
-  <link href="dist/stylesmin.css" rel="stylesheet" type="text/css" />
-</head>
-
-<body>
-
-  <!---Navbar-->
-  <nav class="navbar navbar-expand- navbar-custom text-uppercase fixed-top" >
-    <div class="container-fluid flex flex-column flex-md-row  ">
-    <a class="navbar-brand">Pokédex</a>
-    <form class="justify-content-center" >
-      <input id='pokemon-search' onkeyup="pokemonSearch()" placeholder="Search" class="form-control mb-1 md-md-0">
-    </form>
-  </div>
-  </nav>
-
-
-  <!--List created via Api-->
-  <div class="list-group" id='me'></div>
-
-  <!--Modal div-->
-  <div class="modal fade" id="pokemonModal" tabindex="-1" role="dialog" aria-labelledby="pokemonModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content text-center">
-        <div class="modal-header">
-          <h5 class="modal-title text-capitalize fs-2" id="pokemonModalLabel"></h5>
-          <button type="btn " class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+<html lang="en-CA">
+  <head>
+    <!--Pre-Normailize browser styling-->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pokédex</title>
+    <!--The logo that will be displayed in the tab bar/bookmark-->
+    <link rel="shortcut icon" href="img/favicon.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/styles.css" >
+  </head>
+  <body class="body">
+    <header>
+      <nav class="navbar navbar-expand-sm navbar-dark">
+        <img src="img/github-logo-non-trans.png" alt="Github logo. Link leading to Github profile page" class="logo"></a>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active underline">
+              <div class="title"  aria-label="Logo">Pokédex</div>
+            </li>
+            <li class="nav-item active underline">
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-sm-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Find your favourite!" aria-label="Search" id="search">
+          </form>
         </div>
-        <div class="modal-body text-capitalize fs-2">
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </nav>
+    </header>
+    <main>
+      <div class="container" id="container2">
+        <ul class="pokemon-list row d-flex justify-content-center flex-wrap"></ul>
+      </div>
+
+      <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+      
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title te" id="exampleModalCenterTitle">Modal title</h1>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body text-center">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
+    </main>
 
 
   <!--External scripts-->
@@ -60,7 +73,7 @@
     crossorigin="anonymous"></script>
   <script src="js/promise-polyfill.js"></script>
   <script src="js/fetch.umd.js"></script>
-  <script src="dist\scriptsmin.js"></script>
+  <script src="js/scripts.js"></script>
 
 </body>
 
